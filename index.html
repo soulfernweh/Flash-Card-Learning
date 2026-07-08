@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Shichida Kids - Right Brain Training</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+    <div id="app">
+        <!-- Home Screen -->
+        <div id="screen-home" class="screen active">
+            <header class="home-header">
+                <h1>🧠 Shichida Kids</h1>
+                <p class="subtitle">Right Brain Training for Kids</p>
+            </header>
+            <div class="age-selector">
+                <h2>Select Age Group</h2>
+                <div class="age-buttons">
+                    <button class="age-btn" data-age="1-3">
+                        <span class="age-emoji">👶</span>
+                        <span class="age-label">1–3 years</span>
+                        <span class="age-desc">Toddler</span>
+                    </button>
+                    <button class="age-btn" data-age="3-6">
+                        <span class="age-emoji">🧒</span>
+                        <span class="age-label">3–6 years</span>
+                        <span class="age-desc">Preschool</span>
+                    </button>
+                    <button class="age-btn" data-age="6+">
+                        <span class="age-emoji">📚</span>
+                        <span class="age-label">6+ years</span>
+                        <span class="age-desc">Advanced</span>
+                    </button>
+                </div>
+            </div>
+            <div id="activities-menu" class="activities-menu hidden">
+                <h2>Choose Activity</h2>
+                <div class="activity-grid">
+                    <button class="activity-btn" data-activity="flashcards">
+                        <span class="activity-icon">⚡</span>
+                        <span class="activity-name">Flash Cards</span>
+                    </button>
+                    <button class="activity-btn" data-activity="memory-grid">
+                        <span class="activity-icon">🧩</span>
+                        <span class="activity-name">Memory Grid</span>
+                    </button>
+                    <button class="activity-btn" data-activity="linking-memory">
+                        <span class="activity-icon">🔗</span>
+                        <span class="activity-name">Linking Memory</span>
+                    </button>
+                    <button class="activity-btn" data-activity="mandala">
+                        <span class="activity-icon">🎨</span>
+                        <span class="activity-name">Mandala</span>
+                    </button>
+                    <button class="activity-btn" data-activity="esp-game">
+                        <span class="activity-icon">🔮</span>
+                        <span class="activity-name">ESP Game</span>
+                    </button>
+                    <button class="activity-btn" data-activity="math-dots">
+                        <span class="activity-icon">🔢</span>
+                        <span class="activity-name">Math Dots</span>
+                    </button>
+                    <button class="activity-btn" data-activity="identify-quiz">
+                        <span class="activity-icon">🎯</span>
+                        <span class="activity-name">Identify!</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flash Cards Screen -->
+        <div id="screen-flashcards" class="screen">
+            <div class="game-header">
+                <button class="back-btn" aria-label="Go back">← Back</button>
+                <h2>⚡ Flash Cards</h2>
+                <span class="card-counter" id="flash-counter">1/10</span>
+            </div>
+            <div class="flash-area">
+                <div id="flash-card" class="flash-card">
+                    <div class="flash-image" id="flash-image"></div>
+                    <div class="flash-word" id="flash-word"></div>
+                </div>
+            </div>
+            <div class="flash-controls">
+                <label class="speed-label">Speed: <input type="range" id="flash-speed" min="300" max="3000" value="1000" step="100"><span id="flash-speed-label">1.0s</span></label>
+                <button id="flash-start" class="primary-btn">Start</button>
+                <button id="flash-pause" class="secondary-btn hidden">Pause</button>
+            </div>
+        </div>
+
+        <!-- Memory Grid Screen -->
+        <div id="screen-memory-grid" class="screen">
+            <div class="game-header">
+                <button class="back-btn" aria-label="Go back">← Back</button>
+                <h2>🧩 Memory Grid</h2>
+                <span class="game-status" id="grid-status">Memorize!</span>
+            </div>
+            <div id="memory-grid-area" class="memory-grid-area"></div>
+            <div class="game-controls">
+                <button id="grid-start" class="primary-btn">Start</button>
+                <div id="grid-result" class="result-display hidden"></div>
+            </div>
+        </div>
+
+        <!-- Linking Memory Screen -->
+        <div id="screen-linking-memory" class="screen">
+            <div class="game-header">
+                <button class="back-btn" aria-label="Go back">← Back</button>
+                <h2>🔗 Linking Memory</h2>
+                <span class="game-status" id="link-status">Ready</span>
+            </div>
+            <div id="linking-area" class="linking-area">
+                <div id="link-display" class="link-display"></div>
+            </div>
+            <div class="game-controls">
+                <button id="link-start" class="primary-btn">Start Story</button>
+                <div id="link-answer-area" class="link-answer-area hidden"></div>
+                <div id="link-result" class="result-display hidden"></div>
+            </div>
+        </div>
+
+        <!-- Mandala Screen -->
+        <div id="screen-mandala" class="screen">
+            <div class="game-header">
+                <button class="back-btn" aria-label="Go back">← Back</button>
+                <h2>🎨 Mandala</h2>
+                <span class="game-status" id="mandala-status">Memorize the colors!</span>
+            </div>
+            <div id="mandala-area" class="mandala-area"></div>
+            <div class="mandala-palette hidden" id="mandala-palette"></div>
+            <div class="game-controls">
+                <button id="mandala-start" class="primary-btn">Start</button>
+                <div id="mandala-result" class="result-display hidden"></div>
+            </div>
+        </div>
+
+        <!-- ESP Game Screen -->
+        <div id="screen-esp-game" class="screen">
+            <div class="game-header">
+                <button class="back-btn" aria-label="Go back">← Back</button>
+                <h2>🔮 ESP Game</h2>
+                <span class="game-status" id="esp-status">Guess the hidden card!</span>
+            </div>
+            <div id="esp-area" class="esp-area">
+                <div class="esp-hidden-card" id="esp-hidden">❓</div>
+                <div class="esp-choices" id="esp-choices"></div>
+            </div>
+            <div class="game-controls">
+                <button id="esp-start" class="primary-btn">New Round</button>
+                <div class="esp-score" id="esp-score">Score: 0/0</div>
+                <div id="esp-result" class="result-display hidden"></div>
+            </div>
+        </div>
+
+        <!-- Math Dots Screen -->
+        <div id="screen-math-dots" class="screen">
+            <div class="game-header">
+                <button class="back-btn" aria-label="Go back">← Back</button>
+                <h2>🔢 Math Dots</h2>
+                <span class="game-status" id="dots-status">How many dots?</span>
+            </div>
+            <div id="dots-area" class="dots-area">
+                <div id="dots-display" class="dots-display"></div>
+            </div>
+            <div class="game-controls">
+                <div id="dots-choices" class="dots-choices hidden"></div>
+                <button id="dots-start" class="primary-btn">Start</button>
+                <div id="dots-result" class="result-display hidden"></div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Identify Quiz Screen -->
+        <div id="screen-identify-quiz" class="screen">
+            <div class="game-header">
+                <button class="back-btn" aria-label="Go back">← Back</button>
+                <h2>🎯 Identify!</h2>
+                <span class="game-status" id="quiz-status">Pick a category</span>
+            </div>
+
+            <!-- Category Selection -->
+            <div id="quiz-category-select" class="quiz-category-select">
+                <div class="quiz-categories">
+                    <button class="quiz-cat-btn" data-category="flags">
+                        <span class="activity-icon">🏳️</span>
+                        <span>Flags</span>
+                    </button>
+                    <button class="quiz-cat-btn" data-category="animals">
+                        <span class="activity-icon">🐾</span>
+                        <span>Animals</span>
+                    </button>
+                    <button class="quiz-cat-btn" data-category="vehicles">
+                        <span class="activity-icon">🚗</span>
+                        <span>Vehicles</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Area -->
+            <div id="quiz-play-area" class="quiz-play-area hidden">
+                <div class="quiz-image-container">
+                    <img id="quiz-image" class="quiz-image" src="" alt="Identify this">
+                </div>
+                <div id="quiz-choices" class="quiz-choices"></div>
+                <div class="quiz-progress">
+                    <span id="quiz-score">Score: 0/0</span>
+                    <span id="quiz-round">Round: 1/10</span>
+                </div>
+                <div id="quiz-result" class="result-display hidden"></div>
+                <button id="quiz-next" class="primary-btn hidden">Next →</button>
+            </div>
+
+            <!-- Quiz Complete -->
+            <div id="quiz-complete" class="quiz-complete hidden">
+                <div class="quiz-final-score">
+                    <span class="final-emoji" id="quiz-final-emoji">🎉</span>
+                    <h3 id="quiz-final-text">Great job!</h3>
+                    <p id="quiz-final-score-text">You got 8/10 correct!</p>
+                </div>
+                <button id="quiz-replay" class="primary-btn">Play Again</button>
+                <button id="quiz-change-cat" class="secondary-btn">Change Category</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/quiz-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
