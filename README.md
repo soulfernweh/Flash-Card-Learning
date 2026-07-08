@@ -1,5 +1,7 @@
 # 🧠 Shichida Kids - Right Brain Training
 
+🌐 **[Play Now → https://soulfernweh.github.io/Flash-Card-Learning/](https://soulfernweh.github.io/Flash-Card-Learning/)**
+
 A browser-based learning app for kids inspired by the **Shichida Method** of right-brain education. Designed for mobile/tablet use, hosted on GitHub Pages.
 
 ## 🎮 Activities
@@ -12,6 +14,7 @@ A browser-based learning app for kids inspired by the **Shichida Method** of rig
 | 🎨 Mandala | Memorize and reproduce a colored pattern |
 | 🔮 ESP Game | Intuition training - guess the hidden card |
 | 🔢 Math Dots | Subitizing - quickly count dots shown briefly |
+| 🎯 Identify! | Quiz game - identify flags, animals, and vehicles |
 
 ## 👶 Age Groups
 
