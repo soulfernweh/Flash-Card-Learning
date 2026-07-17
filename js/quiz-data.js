@@ -74,6 +74,7 @@ const QUIZ_DATA = {
 // Difficulty for quiz per age group
 const QUIZ_DIFFICULTY = {
     "1-3": { choices: 2, rounds: 5 },
-    "3-6": { choices: 3, rounds: 8 },
-    "6+":  { choices: 4, rounds: 10 },
+    "3-5": { choices: 3, rounds: 8 },
+    "5-7": { choices: 4, rounds: 10 },
+    "7-10": { choices: 4, rounds: 12 },
 };

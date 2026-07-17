@@ -18,9 +18,10 @@ A browser-based learning app for kids inspired by the **Shichida Method** of rig
 
 ## 👶 Age Groups
 
-- **1-3 years (Toddler)** — Simpler content, fewer items, longer display times
-- **3-6 years (Preschool)** — More items, moderate difficulty
-- **6+ years (Advanced)** — Complex content, faster pace, larger grids
+- **1-3 years (Toddler)** — Simple familiar objects, large images, fewer items, longer display times
+- **3-5 years (Preschool)** — Extended vocabulary, more items, moderate difficulty
+- **5-7 years (Early Reader)** — Science, space, landmarks, occupations, faster pace
+- **7-10 years (Advanced)** — Human body, physics, solar system, geography, history, math concepts, world languages
 
 ## 🚀 Getting Started
 
